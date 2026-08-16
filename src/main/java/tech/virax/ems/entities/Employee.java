@@ -36,4 +36,10 @@ public class Employee {
     @Column(name = "e_designation", nullable = false)
     private String designation;
 
+    @Column(name = "created_at")
+    private String createdAt;
+
+    @Column(name = "updated_at")
+    private String updatedAt;
+
 }
