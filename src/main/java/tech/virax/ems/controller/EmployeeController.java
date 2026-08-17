@@ -22,7 +22,7 @@ import tech.virax.ems.exceptions.EmployeeNotFoundException;
 import tech.virax.ems.services.EmployeeService;
 
 @RestController
-@RequestMapping("/api/employee")
+@RequestMapping("/api/employees")
 public class EmployeeController {
     
     private final EmployeeService employeeService;
