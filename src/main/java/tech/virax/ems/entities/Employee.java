@@ -19,7 +19,7 @@ public class Employee {
     @Id
     @Column(name = "e_id")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
+    private Long id;
 
     @Column(name = "e_name", length = 50, nullable = false)
     private String name;
@@ -31,7 +31,7 @@ public class Employee {
     private String email;
 
     @Column(name = "e_salary", nullable = false)
-    private double salary;
+    private Double salary;
 
     @Column(name = "e_designation", nullable = false)
     private String designation;

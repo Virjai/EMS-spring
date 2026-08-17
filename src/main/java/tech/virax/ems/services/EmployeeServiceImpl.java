@@ -33,6 +33,11 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
+    public Employee updateEmployee(Long id, Double salary) {
+        return null;
+    }
+
+    @Override
     public void deleteEmployee(EmployeeDTO employeeDTO) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'deleteEmployee'");
