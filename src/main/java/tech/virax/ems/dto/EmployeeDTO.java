@@ -11,14 +11,14 @@ public record EmployeeDTO(
     String name,
             
     @Positive(message = "Age must be greater than zero")
-    @Min(value = 19)
+    @Min(value = 19, message = "Age must be at least 19")
     int age,
                   
     @NotBlank(message = "Email is mandatory")
     @Email(message = "Email must be in valid format")
     String email,
                     
-    @Positive(message = "Salary cannot be negative")
+    @Positive(message = "Salary must be greater than zero")
     double salary,
                     
     @NotBlank(message = "Designation cannot be empty")
