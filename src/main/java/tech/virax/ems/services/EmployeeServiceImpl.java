@@ -1,23 +1,35 @@
 package tech.virax.ems.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+import org.modelmapper.ModelMapper;
+
 import tech.virax.ems.dto.EmployeeDTO;
 import tech.virax.ems.entities.Employee;
+import tech.virax.ems.repositories.EmployeeRepository;
 
 public class EmployeeServiceImpl implements EmployeeService {
+    private final EmployeeRepository employeeRepository;
+    private final ModelMapper modelMapper;
+
+    public EmployeeServiceImpl(EmployeeRepository employeeRepository, ModelMapper modelMapper) {
+        this.employeeRepository = employeeRepository;
+        this.modelMapper = modelMapper;
+    }
 
     @Override
     public Employee saveEmployee(EmployeeDTO employeeDTO) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'saveEmployee'");
+        Employee employee = modelMapper.map(employeeDTO, Employee.class);
+        employee.setCreatedAt(LocalDateTime.now().toString());
+        employee.setUpdatedAt(LocalDateTime.now().toString());
+        return employeeRepository.save(employee);
     }
 
     @Override
     public Optional<Employee> getEmployeeById(long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getEmployeeById'");
+       return employeeRepository.findById(id);
     }
 
     @Override
