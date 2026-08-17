@@ -4,26 +4,30 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public record EmployeeDTO(
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class EmployeeDTO{
 
     @NotBlank(message = "Name cannot be empty")
-    String name,
+    private String name;
             
     @Positive(message = "Age must be greater than zero")
     @Min(value = 19, message = "Age must be at least 19")
-    int age,
+    private int age;
                   
     @NotBlank(message = "Email is mandatory")
     @Email(message = "Email must be in valid format")
-    String email,
+    private String email;
                     
     @Positive(message = "Salary must be greater than zero")
-    double salary,
+    private double salary;
                     
     @NotBlank(message = "Designation cannot be empty")
-    String designation
-    
-) {
+    private String designation;
     
 }
